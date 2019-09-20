@@ -1,0 +1,934 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Jonathan Lim
+
+	Journal Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Predicting Flight Delays – Jonathan Lim</title>
+	<meta name="description" content="This page is a demo that shows everything you can do inside portfolio and blog posts. We've included everything you need to create engaging posts about your work, and show off your case studies in a beauti">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Predicting Flight Delays – Jonathan Lim">
+	<meta name="twitter:description" content="This page is a demo that shows everything you can do inside portfolio and blog posts. We've included everything you need to create engaging posts about your work, and show off your case studies in a beauti">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/demo/delaybg.jpg">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Predicting Flight Delays – Jonathan Lim" />
+	<meta property="og:description" content="This page is a demo that shows everything you can do inside portfolio and blog posts. We've included everything you need to create engaging posts about your work, and show off your case studies in a beauti" />
+	<meta property="og:image" content="http://localhost:4000/images/demo/delaybg.jpg" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Muli:400,400i,600" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/project/flight-delay">
+
+
+	<header class="header">
+
+	<div class="header-image header-image--on" style="background-image: url(/images/demo/delaybg.jpg);"></div>
+	<div class="header-image"></div>
+
+	<div class="header-overlay"></div>
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__title">
+			Jonathan Lim
+		</a>
+		
+
+		<p class="header__tagline">Talent is the desire to practice and that it's attitude that counts</p>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Latest</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/projects/" class="menu__list__item__link">Projects</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/iotas/" class="menu__list__item__link">IOTA</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link">Contact</a>
+					</li>
+					
+				</ul>
+				<ul class="socials">
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://twitter.com/__JonathanLim__" target="_blank" class="socials__item__link" title="Twitter">
+			<i class="fab fa-twitter" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://instagram.com/d_shin91" target="_blank" class="socials__item__link" title="Instagram">
+			<i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/DongShinLIM" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Predicting Flight Delays – Jonathan Lim" data-image="/images/demo/delaybg.jpg">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Predicting Flight Delays</h1>
+		<p></p>
+		<p>18 September 2019</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<p><img src="/images/demo/delay.jpg" alt="" /></p>
+
+<h3 id="2019-빅콘테스트-항공기-지연-예측-모델-r-python-randomforest">2019 빅콘테스트 항공기 지연 예측 모델 (R, Python, Randomforest)</h3>
+<h4 id="2017년-1월-1일부터-19년-6월-30일까지-국내의-모든-항공-운항데이터약-100만건를-기반으로-2019년-9월-16일부터-30일까지-예정되어-있는-항공기약-1만6천건의-지연-여부와-지연확률을-예측하는-것이-본-프로젝트의-최종-목표이다">2017년 1월 1일부터 19년 6월 30일까지 국내의 모든 항공 운항데이터(약 100만건)를 기반으로 2019년 9월 16일부터 30일까지 예정되어 있는 항공기(약 1만6천건)의 지연 여부와 지연확률을 예측하는 것이 본 프로젝트의 최종 목표이다.</h4>
+
+<h4 id="1-필요한-패키지를-설치한다">1. 필요한 패키지를 설치한다</h4>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">randomForest</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">MLmetrics</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ROCR</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">pROC</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">plyr</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<h4 id="2-제공된-raw-data를-불러온다">2. 제공된 Raw Data를 불러온다</h4>
+<p>해당 공모전에서 제공 된 파일은 모델링을 할 때 쓰이는 ‘AFSNT.csv’와 예측하여 제출해야 할 파일 ‘AFSNT_DLY.csv’ 총 두개이다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"AFSNT.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">fileEncoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'euc-kr'</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.csv</span><span class="p">(</span><span class="s2">"AFSNT_DLY.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">fileEncoding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'euc-kr'</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s1">'ARP1'</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR  STT
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N 6:10
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N 6:15
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N 6:20
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N 6:25
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N 6:30
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N 6:30
+##    ATT DLY DRR CNL CNR
+## 1 6:18   N       N    
+## 2 6:25   N       N    
+## 3 6:30   N       N    
+## 4 6:34   N       N    
+## 5 6:37   N       N    
+## 6 6:38   N       N
+</code></pre></div></div>
+
+<p>2017년 1월1일부터 2019년 6월30일까지 국내공항 간 비행 데이터이며 각 변수는 순서대로 
+(년, 월, 일, 요일, 출발공항, 상대공항, 항공사, 편명, 등록기호, 출도착, 부정기, 예정시각, 실제시각, 지연여부, 지연코드, 결항여부, 결항코드) 를 의미한다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">head</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT AOD   STT DLY DLY_RATE
+## 1   2019      9     16     월 ARP1 ARP3   L L1702   A  9:05  NA       NA
+## 2   2019      9     16     월 ARP3 ARP1   L L1702   D  7:55  NA       NA
+## 3   2019      9     16     월 ARP1 ARP3   L L1720   A 14:40  NA       NA
+## 4   2019      9     16     월 ARP3 ARP1   L L1720   D 13:30  NA       NA
+## 5   2019      9     16     월 ARP4 ARP3   L L1808   A 20:10  NA       NA
+## 6   2019      9     16     월 ARP3 ARP4   L L1808   D 19:10  NA       NA 예측하여 제출해야 할 데이터는 2019년 9월 16일부터 30일까지 (년, 월, 일, 요일, 출발공항, 상대공항, 항공사, 편명, 출도착) 변수가 있으며  최종적으로 '지연여부'와 '지연확률'을 예측하는 것이 이 프로젝트의 최종 목표이다.
+</code></pre></div></div>
+
+<h3 id="3-결항편-삭제-및-데이터-형태-변경">3. 결항편 삭제 및 데이터 형태 변경</h3>
+<p>결항 데이터는 최종 예측 해야하는 지연여부에 영향을 끼치지 않았기 때문에 삭제하였으며, (년, 월, 일) 컬럼도 시기적으로 비행기 지연에 영향이 있다고 판단하여
+범주형으로 바꾸었다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">dplyr</span><span class="o">::</span><span class="n">filter</span><span class="p">(</span><span class="n">CNL</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"N"</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR  STT
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N 6:10
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N 6:15
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N 6:20
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N 6:25
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N 6:30
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N 6:30
+##    ATT DLY DRR CNL CNR
+## 1 6:18   N       N    
+## 2 6:25   N       N    
+## 3 6:30   N       N    
+## 4 6:34   N       N    
+## 5 6:37   N       N    
+## 6 6:38   N       N
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_YY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_YY</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_MM</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_MM</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_DD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">SDT_DD</span><span class="p">)</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR  STT
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N 6:10
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N 6:15
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N 6:20
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N 6:25
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N 6:30
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N 6:30
+##    ATT DLY DRR CNL CNR
+## 1 6:18   N       N    
+## 2 6:25   N       N    
+## 3 6:30   N       N    
+## 4 6:34   N       N    
+## 5 6:37   N       N    
+## 6 6:38   N       N
+</code></pre></div></div>
+
+<h3 id="4-hour-count-변수-생성">4. ‘Hour’, ‘count’ 변수 생성</h3>
+<p>시간 별 각 공항에 얼마나 많은 항공기가 예정되어 있는지를 알려주는 변수를 생성한다.
+예정 시각 변수에서 시간을 추출하여 ‘Hour’ 변수를 만들고 이를 이용하여 ‘count’변수를 만든다.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="o">$</span><span class="n">STT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">STT</span><span class="p">)</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">afsnt</span><span class="p">[,</span><span class="w"> </span><span class="s2">"STT"</span><span class="p">],</span><span class="w">  </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">str_split</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">':'</span><span class="p">)</span><span class="w">  </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">`[[`</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w">
+</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">()</span><span class="w">
+
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">HOUR</span><span class="w">
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">HOUR</span><span class="p">)</span><span class="w">
+
+</span><span class="n">afsnt_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+ </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">SDT_YY</span><span class="p">,</span><span class="w"> </span><span class="n">SDT_MM</span><span class="p">,</span><span class="w"> </span><span class="n">SDT_DD</span><span class="p">,</span><span class="w"> </span><span class="n">ARP</span><span class="p">,</span><span class="w"> </span><span class="n">HOUR</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+ </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="s1">'count'</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+
+</span><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">afsnt</span><span class="p">,</span><span class="w"> </span><span class="n">afsnt_count</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"SDT_YY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SDT_MM"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SDT_DD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ARP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR  STT
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N 6:10
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N 6:15
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N 6:20
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N 6:25
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N 6:30
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N 6:30
+##    ATT DLY DRR CNL CNR HOUR count
+## 1 6:18   N       N        6    10
+## 2 6:25   N       N        6    10
+## 3 6:30   N       N        6    10
+## 4 6:34   N       N        6    10
+## 5 6:37   N       N        6     2
+## 6 6:38   N       N        6    10
+</code></pre></div></div>
+
+<h3 id="5-시간-차-변수-생성">5. 시간 차 변수 생성</h3>
+<p>예정시각과 실제시각의 차이를 구하기 위하여 각 변수를 시간 변수로 바꾼 뒤 시간 차 변수(timediff)를 생성한다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="o">$</span><span class="n">STT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">strptime</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">STT</span><span class="p">),</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"%H:%M"</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">ATT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">strptime</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">ATT</span><span class="p">),</span><span class="w"> </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"%H:%M"</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N
+##                   STT                 ATT DLY DRR CNL CNR HOUR count
+## 1 2019-09-17 06:10:00 2019-09-17 06:18:00   N       N        6    10
+## 2 2019-09-17 06:15:00 2019-09-17 06:25:00   N       N        6    10
+## 3 2019-09-17 06:20:00 2019-09-17 06:30:00   N       N        6    10
+## 4 2019-09-17 06:25:00 2019-09-17 06:34:00   N       N        6    10
+## 5 2019-09-17 06:30:00 2019-09-17 06:37:00   N       N        6     2
+## 6 2019-09-17 06:30:00 2019-09-17 06:38:00   N       N        6    10
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="o">$</span><span class="n">timediff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">difftime</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">ATT</span><span class="p">,</span><span class="w"> </span><span class="n">afsnt</span><span class="o">$</span><span class="n">STT</span><span class="p">,</span><span class="w"> </span><span class="n">units</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"mins"</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N
+##                   STT                 ATT DLY DRR CNL CNR HOUR count
+## 1 2019-09-17 06:10:00 2019-09-17 06:18:00   N       N        6    10
+## 2 2019-09-17 06:15:00 2019-09-17 06:25:00   N       N        6    10
+## 3 2019-09-17 06:20:00 2019-09-17 06:30:00   N       N        6    10
+## 4 2019-09-17 06:25:00 2019-09-17 06:34:00   N       N        6    10
+## 5 2019-09-17 06:30:00 2019-09-17 06:37:00   N       N        6     2
+## 6 2019-09-17 06:30:00 2019-09-17 06:38:00   N       N        6    10
+##   timediff
+## 1   8 mins
+## 2  10 mins
+## 3  10 mins
+## 4   9 mins
+## 5   7 mins
+## 6   8 mins
+</code></pre></div></div>
+
+<p>시간 차 변수가 0보다 작은 것은 조기 출발한 항공편으로 0으로 바꾸어 준다.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">ATT</span><span class="p">),</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="n">afsnt</span><span class="p">[(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">timediff</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"timediff"</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">timediff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">timediff</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N
+##                   STT                 ATT DLY DRR CNL CNR HOUR count
+## 1 2019-09-17 06:10:00 2019-09-17 06:18:00   N       N        6    10
+## 2 2019-09-17 06:15:00 2019-09-17 06:25:00   N       N        6    10
+## 3 2019-09-17 06:20:00 2019-09-17 06:30:00   N       N        6    10
+## 4 2019-09-17 06:25:00 2019-09-17 06:34:00   N       N        6    10
+## 5 2019-09-17 06:30:00 2019-09-17 06:37:00   N       N        6     2
+## 6 2019-09-17 06:30:00 2019-09-17 06:38:00   N       N        6    10
+##   timediff
+## 1        8
+## 2       10
+## 3       10
+## 4        9
+## 5        7
+## 6        8
+</code></pre></div></div>
+
+<h3 id="6지연코드를-활용한-변수-생성">6.지연코드를 활용한 변수 생성</h3>
+<p>지연코드의 비율은 ‘C02’(AC접속불량)이 가장 많다. 이를 이용하여 ‘편명별 C02’ 변수를 생성한다.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="o">$</span><span class="n">DRR.group</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ifelse</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DRR</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"C02"</span><span class="p">,</span><span class="w">
+                          </span><span class="s2">"C02"</span><span class="p">,</span><span class="w">
+                          </span><span class="s2">"Non-C02"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DRR.group</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DRR.group</span><span class="p">)</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR DLY DRR
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N   N    
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N   N    
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N   N    
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N   N    
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N   N    
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N   N    
+##   CNL CNR HOUR count timediff DRR.group
+## 1   N        6    10        8   Non-C02
+## 2   N        6    10       10   Non-C02
+## 3   N        6    10       10   Non-C02
+## 4   N        6    10        9   Non-C02
+## 5   N        6     2        7   Non-C02
+## 6   N        6  
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">filter</span><span class="p">(</span><span class="n">DRR.group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"C02"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">left_join</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">c</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">c</span><span class="p">)]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">)</span><span class="w">
+</span><span class="n">c</span><span class="o">$</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">c</span><span class="o">$</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="n">c</span><span class="o">$</span><span class="n">FLT_C02_ratio</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="p">(</span><span class="n">c</span><span class="o">$</span><span class="n">y</span><span class="o">/</span><span class="n">c</span><span class="o">$</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">,</span><span class="w"> </span><span class="s2">"FLT_C02_ratio"</span><span class="p">)</span><span class="w">
+</span><span class="n">c</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">select</span><span class="p">(</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="w">
+
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##     FLT FLT_C02_ratio
+## 1 A1001      2.398524
+## 2 A1002     36.229508
+## 3 A1003     11.299435
+## 4 A1004     12.109375
+## 5 A1005     11.574074
+## 6 A1006      7.421875
+</code></pre></div></div>
+
+<h3 id="7편명별-부정기-비율-평균-지연시간-지연율-변수를-추가한다">7.편명별 부정기 비율, 평균 지연시간, 지연율 변수를 추가한다.</h3>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">timediff</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"FLT_meantimediff"</span><span class="p">)</span><span class="w">
+</span><span class="n">f</span><span class="o">$</span><span class="n">FLT_meantimediff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">f</span><span class="o">$</span><span class="n">FLT_meantimediff</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## # A tibble: 6 x 2
+##   FLT   FLT_meantimediff
+##   &lt;fct&gt;            &lt;dbl&gt;
+## 1 A1001             10.3
+## 2 A1002             27.9
+## 3 A1003             18.3
+## 4 A1004             18.6
+## 5 A1005             21.3
+## 6 A1006             18.4
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="n">mean</span><span class="p">(</span><span class="n">timediff</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"FLT_meantimediff"</span><span class="p">)</span><span class="w">
+</span><span class="n">f</span><span class="o">$</span><span class="n">FLT_meantimediff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">f</span><span class="o">$</span><span class="n">FLT_meantimediff</span><span class="p">)</span><span class="w">
+</span><span class="n">head</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## # A tibble: 6 x 2
+##   FLT   FLT_meantimediff
+##   &lt;fct&gt;            &lt;dbl&gt;
+## 1 A1001             10.3
+## 2 A1002             27.9
+## 3 A1003             18.3
+## 4 A1004             18.6
+## 5 A1005             21.3
+## 6 A1006             18.4
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">:::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">:::</span><span class="n">summarise</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">dplyr</span><span class="o">:::</span><span class="n">filter</span><span class="p">(</span><span class="n">DLY</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">dplyr</span><span class="o">:::</span><span class="n">group_by</span><span class="p">(</span><span class="n">FLT</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">:::</span><span class="n">summarise</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+</span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">(</span><span class="n">left_join</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">g</span><span class="p">[</span><span class="nf">is.na</span><span class="p">(</span><span class="n">g</span><span class="p">)]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span><span class="w">
+
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="w"> </span><span class="s2">"x"</span><span class="p">,</span><span class="w"> </span><span class="s2">"y"</span><span class="p">)</span><span class="w">
+</span><span class="n">g</span><span class="o">$</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">(</span><span class="n">g</span><span class="o">$</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span><span class="n">g</span><span class="o">$</span><span class="n">FLT_DLY_ratio</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">  </span><span class="p">(</span><span class="n">g</span><span class="o">$</span><span class="n">y</span><span class="o">/</span><span class="n">g</span><span class="o">$</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="w">
+</span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">  </span><span class="n">select</span><span class="p">(</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"FLT"</span><span class="p">,</span><span class="s2">"FLT_DLY_ratio"</span><span class="p">)</span><span class="w">
+
+
+</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">)</span><span class="w">
+</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">)</span><span class="w">
+</span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">afsnt</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT      REG AOD IRR DLY DRR
+## 1   2017      1      1     일 ARP1 ARP3   A A1901 SEw3Nzc2   D   N   N    
+## 2   2017      1      1     일 ARP1 ARP3   A A1905 SEw4MjM2   D   N   N    
+## 3   2017      1      1     일 ARP1 ARP3   L L1751 SEw4MjM3   D   N   N    
+## 4   2017      1      1     일 ARP1 ARP3   F F1201 SEw4MjA3   D   N   N    
+## 5   2017      1      1     일 ARP3 ARP1   A A1900 SEw3NzAz   D   N   N    
+## 6   2017      1      1     일 ARP1 ARP3   H H1101 SEw4MDMx   D   N   N    
+##   CNL CNR HOUR count timediff DRR.group FLT_C02_ratio FLT_IRR_ratio
+## 1   N        6    10        8   Non-C02     0.8324084     0.0000000
+## 2   N        6    10       10   Non-C02     0.7168459     0.0000000
+## 3   N        6    10       10   Non-C02     0.0000000     0.0000000
+## 4   N        6    10        9   Non-C02     0.6365741     0.0000000
+## 5   N        6     2        7   Non-C02     0.2257336     0.3386005
+## 6   N        6    10        8   Non-C02     0.4540295     0.0000000
+##   FLT_meantimediff FLT_DLY_ratio
+## 1         8.551054      2.164262
+## 2         9.765233      2.508961
+## 3         8.232143      2.380952
+## 4         9.984954      3.298611
+## 5         6.276524      1.467269
+## 6        10.640182      3.064699
+</code></pre></div></div>
+
+<h3 id="8-위에-생성한-변수를-예측-데이터인-afsnt_dly-데이터-프레임에도-생성한다">8. 위에 생성한 변수를 예측 데이터인 afsnt_dly 데이터 프레임에도 생성한다.</h3>
+<p>위에 새로 만든 변수는 편명을 기준으로 하여 left_join 하여 붙여준다.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt_dly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"FLT"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Warning: Column `FLT` joining factors with different levels, coercing to
+## character vector
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">FLT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">FLT</span><span class="p">)</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT AOD   STT DLY DLY_RATE
+## 1   2019      9     16     월 ARP1 ARP3   L L1702   A  9:05  NA       NA
+## 2   2019      9     16     월 ARP3 ARP1   L L1702   D  7:55  NA       NA
+## 3   2019      9     16     월 ARP1 ARP3   L L1720   A 14:40  NA       NA
+## 4   2019      9     16     월 ARP3 ARP1   L L1720   D 13:30  NA       NA
+## 5   2019      9     16     월 ARP4 ARP3   L L1808   A 20:10  NA       NA
+## 6   2019      9     16     월 ARP3 ARP4   L L1808   D 19:10  NA       NA
+##   FLT_C02_ratio FLT_IRR_ratio FLT_meantimediff FLT_DLY_ratio
+## 1      5.091312     1.8262313         12.28832      5.755396
+## 2      5.091312     1.8262313         12.28832      5.755396
+## 3     22.232472     0.1845018         20.32472     22.785978
+## 4     22.232472     0.1845018         20.32472     22.785978
+## 5     22.436604     0.2205072         21.50331     20.507166
+## 6     22.436604     0.2205072         21.50331     20.507166
+</code></pre></div></div>
+
+<h3 id="9-예측-셋의-편명-별-비율-변수-결측치를-채운다">9. 예측 셋의 편명 별 비율 변수 결측치를 채운다</h3>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FLO_J</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">filter</span><span class="p">(</span><span class="n">FLO</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"J"</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">select</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">23</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">summarise</span><span class="p">(</span><span class="n">mean_FLT_CO2_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_C02_ratio</span><span class="p">),</span><span class="w">
+            </span><span class="n">mean_FLT_IRR_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_IRR_ratio</span><span class="p">),</span><span class="w">
+            </span><span class="n">mean_FLT_meantimediff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_meantimediff</span><span class="p">),</span><span class="w">
+            </span><span class="n">mean_FLT_DLY_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_DLY_ratio</span><span class="p">))</span><span class="w">
+
+</span><span class="n">IRR_y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">dplyr</span><span class="o">::</span><span class="n">filter</span><span class="p">(</span><span class="n">IRR</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">IRR_yy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">IRR_y</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">select</span><span class="p">(</span><span class="m">20</span><span class="o">:</span><span class="m">23</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> 
+  </span><span class="n">summarise</span><span class="p">(</span><span class="n">mean_FLT_CO2_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_C02_ratio</span><span class="p">),</span><span class="w">
+            </span><span class="n">mean_FLT_IRR_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w">
+            </span><span class="n">mean_FLT_meantimediff</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_meantimediff</span><span class="p">),</span><span class="w">
+            </span><span class="n">mean_FLT_DLY_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">median</span><span class="p">(</span><span class="n">FLT_DLY_ratio</span><span class="p">))</span><span class="w">
+
+</span><span class="n">afsnt_dly</span><span class="p">[</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">FLO</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"J"</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">FLT_C02_ratio</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(),</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">13</span><span class="o">:</span><span class="m">16</span><span class="p">)]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">FLO_J</span><span class="w">
+
+</span><span class="n">afsnt_dly</span><span class="p">[</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">FLO</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">13</span><span class="o">:</span><span class="m">16</span><span class="p">)]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">IRR_yy</span><span class="w">
+</span></code></pre></div></div>
+<h3 id="10-afsnt와-마찬가지로-hour-count-변수를-생성한다">10. afsnt와 마찬가지로 ‘Hour’, ‘count’ 변수를 생성한다.</h3>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">STT</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">STT</span><span class="p">)</span><span class="w">
+</span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sapply</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">[,</span><span class="w"> </span><span class="s2">"STT"</span><span class="p">],</span><span class="w">  </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">str_split</span><span class="p">(</span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">':'</span><span class="p">)</span><span class="w">  </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">`[[`</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="w"> </span><span class="p">})</span><span class="w">
+</span><span class="n">HOUR_nd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="nf">as.numeric</span><span class="p">()</span><span class="w">
+
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">HOUR_nd</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">HOUR</span><span class="p">)</span><span class="w">
+
+</span><span class="n">afsnt_dly_count</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_dly</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+ </span><span class="n">dplyr</span><span class="o">::</span><span class="n">group_by</span><span class="p">(</span><span class="n">SDT_YY</span><span class="p">,</span><span class="w"> </span><span class="n">SDT_MM</span><span class="p">,</span><span class="w"> </span><span class="n">SDT_DD</span><span class="p">,</span><span class="w"> </span><span class="n">ARP</span><span class="p">,</span><span class="w"> </span><span class="n">HOUR</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+ </span><span class="n">dplyr</span><span class="o">::</span><span class="n">summarise</span><span class="p">(</span><span class="s1">'count'</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="p">())</span><span class="w">
+
+</span><span class="n">afsnt_dly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">left_join</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">,</span><span class="w"> </span><span class="n">afsnt_dly_count</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"SDT_YY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SDT_MM"</span><span class="p">,</span><span class="w"> </span><span class="s2">"SDT_DD"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ARP"</span><span class="p">,</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">))</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP  ODP FLO   FLT AOD   STT DLY DLY_RATE
+## 1   2019      9     16     월 ARP1 ARP3   L L1702   A  9:05  NA       NA
+## 2   2019      9     16     월 ARP3 ARP1   L L1702   D  7:55  NA       NA
+## 3   2019      9     16     월 ARP1 ARP3   L L1720   A 14:40  NA       NA
+## 4   2019      9     16     월 ARP3 ARP1   L L1720   D 13:30  NA       NA
+## 5   2019      9     16     월 ARP4 ARP3   L L1808   A 20:10  NA       NA
+## 6   2019      9     16     월 ARP3 ARP4   L L1808   D 19:10  NA       NA
+##   FLT_C02_ratio FLT_IRR_ratio FLT_meantimediff FLT_DLY_ratio HOUR count
+## 1      5.091312     1.8262313         12.28832      5.755396    9    25
+## 2      5.091312     1.8262313         12.28832      5.755396    7    24
+## 3     22.232472     0.1845018         20.32472     22.785978   14    26
+## 4     22.232472     0.1845018         20.32472     22.785978   13    30
+## 5     22.436604     0.2205072         21.50331     20.507166   20     3
+## 6     22.436604     0.2205072         21.50331     20.507166   19    28
+</code></pre></div></div>
+
+<h3 id="11-train-set-test-set-샘플링">11. Train set, Test set 샘플링</h3>
+<p>grid-search 결과 Train set 내 미지연과 지연 비율을 73:27로 맞추는 것이 AUROC가 가장 높게 나왔다.
+다만 Test set은 예측해야 하는 기존 데이터 셋과 마찬가지로 87:13을 유지한다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">afsnt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">11</span><span class="p">,</span><span class="m">13</span><span class="p">,</span><span class="m">14</span><span class="p">,</span><span class="m">15</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">19</span><span class="p">)]</span><span class="w">
+
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_YY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_YY</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_MM</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_MM</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_DD</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">SDT_DD</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">HOUR</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="o">$</span><span class="n">HOUR</span><span class="p">)</span><span class="w">
+
+</span><span class="n">set.seed</span><span class="p">(</span><span class="n">seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">123</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># 목적변수 비율 맞춰 샘플링 하기 </span><span class="w">
+</span><span class="n">afsnt_Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">),</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="n">afsnt_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"N"</span><span class="p">),</span><span class="w"> </span><span class="p">]</span><span class="w">
+
+</span><span class="c1"># 트레인 테스트 셋 샘플링하기 위해 다음과 같이 처리합니다. </span><span class="w">
+</span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> 
+                </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">afsnt_N</span><span class="p">),</span><span class="w"> 
+                </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="m">0.3</span><span class="p">),</span><span class="w"> 
+                </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">trainSet_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_N</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">,]</span><span class="w">
+
+</span><span class="n">index</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sample</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="w"> 
+                </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nrow</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">afsnt_Y</span><span class="p">),</span><span class="w"> 
+                </span><span class="n">prob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.8</span><span class="p">,</span><span class="w"> </span><span class="m">0.2</span><span class="p">),</span><span class="w"> 
+                </span><span class="n">replace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> 
+
+</span><span class="n">trainSet_Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_Y</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">,]</span><span class="w">
+</span><span class="n">trainSet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">trainSet_Y</span><span class="p">,</span><span class="w"> </span><span class="n">trainSet_N</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># 테스트 데이터 셋은 실제 미지연과 지연 데이터 비율인 87:13에 맞춰 적합</span><span class="w">
+</span><span class="n">testSet_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_N</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="p">,]</span><span class="w">
+</span><span class="n">testSet_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sample_n</span><span class="p">(</span><span class="n">testSet_N</span><span class="p">,</span><span class="w"> </span><span class="m">160000</span><span class="p">)</span><span class="w">
+
+</span><span class="n">testSet_Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_Y</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w">
+
+
+</span><span class="n">testSet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">testSet_Y</span><span class="p">,</span><span class="w"> </span><span class="n">testSet_N</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># 훈련용, 시험용 데이터셋의 목표변수 비중을 확인합니다.  </span><span class="w">
+</span><span class="n">trainSet</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">table</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">prop.table</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## .
+##         N         Y 
+## 0.7305399 0.2694601
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">testSet</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">table</span><span class="p">()</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">prop.table</span><span class="p">()</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## .
+##         N         Y 
+## 0.8704925 0.1295075
+</code></pre></div></div>
+
+<h3 id="12-랜덤포레스트-모델-성능-확인">12. 랜덤포레스트 모델 성능 확인</h3>
+<p>임의로 ntree = 50, mtry = 5로 모델 적합을 실시하여 개략적인 OOB와 미지연과 지연 예측 오류정도를 확인한다.</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fitRFC</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">randomForest</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trainSet</span><span class="p">[,</span><span class="w"> </span><span class="m">-8</span><span class="p">],</span><span class="w"> 
+                       </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trainSet</span><span class="p">[,</span><span class="w"> </span><span class="m">8</span><span class="p">],</span><span class="w"> 
+                       </span><span class="n">xtest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">testSet</span><span class="p">[,</span><span class="w"> </span><span class="m">-8</span><span class="p">],</span><span class="w"> 
+                       </span><span class="n">ytest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">testSet</span><span class="p">[,</span><span class="w"> </span><span class="m">8</span><span class="p">],</span><span class="w"> 
+                       </span><span class="n">ntree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">mtry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">importance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">do.trace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">keep.forest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## ntree      OOB      1      2|    Test      1      2
+##    50:  22.05% 11.91% 49.52%|  13.02%  7.59% 49.54%
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 모형 적합 결과를 확인합니다. </span><span class="w">
+</span><span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fitRFC</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## 
+## Call:
+##  randomForest(x = trainSet[, -8], y = trainSet[, 8], xtest = testSet[,      -8], ytest = testSet[, 8], ntree = 50, mtry = 5, importance = TRUE,      do.trace = 50, keep.forest = TRUE) 
+##                Type of random forest: classification
+##                      Number of trees: 50
+## No. of variables tried at each split: 5
+## 
+##         OOB estimate of  error rate: 22.05%
+## Confusion matrix:
+##        N     Y class.error
+## N 227195 30717   0.1190988
+## Y  47113 48018   0.4952434
+##                 Test set error rate: 13.02%
+## Confusion matrix:
+##        N     Y class.error
+## N 147859 12141  0.07588125
+## Y  11793 12011  0.49542094
+</code></pre></div></div>
+
+<p>### 13. 혼동행렬, F1점수 RUROC(레이블 &amp; 추정확률)로 모델의 성능을 확인</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># testSet의 추정확률과 추정값(레이블)을 trProb, trPred에 할당합니다. </span><span class="w">
+</span><span class="n">trProb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fitRFC</span><span class="o">$</span><span class="n">test</span><span class="o">$</span><span class="n">votes</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span><span class="n">trPred</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fitRFC</span><span class="o">$</span><span class="n">test</span><span class="o">$</span><span class="n">predicted</span><span class="w">
+
+</span><span class="c1"># 시험셋의 실제값을 trReal에 할당합니다. </span><span class="w">
+</span><span class="n">trReal</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">testSet</span><span class="o">$</span><span class="n">DLY</span><span class="w">
+
+
+</span><span class="c1"># 혼동행렬을 출력합니다. </span><span class="w">
+</span><span class="n">confusionMatrix</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trPred</span><span class="p">,</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trReal</span><span class="p">,</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Y'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction      N      Y
+##          N 147859  11793
+##          Y  12141  12011
+##                                           
+##                Accuracy : 0.8698          
+##                  95% CI : (0.8682, 0.8713)
+##     No Information Rate : 0.8705          
+##     P-Value [Acc &gt; NIR] : 0.8177          
+##                                           
+##                   Kappa : 0.426           
+##  Mcnemar's Test P-Value : 0.0249          
+##                                           
+##             Sensitivity : 0.50458         
+##             Specificity : 0.92412         
+##          Pos Pred Value : 0.49731         
+##          Neg Pred Value : 0.92613         
+##              Prevalence : 0.12951         
+##          Detection Rate : 0.06535         
+##    Detection Prevalence : 0.13140         
+##       Balanced Accuracy : 0.71435         
+##                                           
+##        'Positive' Class : Y               
+## 
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># F1 점수를 확인합니다.</span><span class="w">
+</span><span class="nb">F</span><span class="m">1</span><span class="n">Score</span><span class="p">(</span><span class="n">y_pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trPred</span><span class="p">,</span><span class="w"> </span><span class="n">y_true</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trReal</span><span class="p">,</span><span class="w"> </span><span class="n">positive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Y'</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## [1] 0.5009175
+</code></pre></div></div>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 추정레이블로 ROC 그래프를 그리고 AUROC를 확인합니다. </span><span class="w">
+</span><span class="n">getROC</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trReal</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trPred</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p><img src="/images/demo/lable.png" alt="" /></p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 추정확률로 ROC 그래프를 그리고 AUROC를 확인합니다. </span><span class="w">
+</span><span class="n">getROC</span><span class="p">(</span><span class="n">real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trReal</span><span class="p">,</span><span class="w"> </span><span class="n">pred</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trProb</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<p><img src="/images/demo/prb.png" alt="" /></p>
+
+<h3 id="14-afsnt_dly-예측-train-set-적합">14. afsnt_dly 예측 train set 적합</h3>
+<p>afsnt 전체 데이터 미지연과 지연 비율을 73:27로 맞춘 뒤, 그리드 서칭 결과 최적의 파라미터로 평가 된 ntree = 500, mtry = 5를 할당하여 모델 적합
+afsnt_dly 데이터에는 존재하지만 train set 인 afsnt 데이터는 존재하는 편명 때문에 “FLO” 변수는 제거한다.</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#위와 마찬가지로 미지연과 지연의 비율을 73:27로 맞춰 학습셋 적합</span><span class="w">
+</span><span class="n">afsnt_Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">),</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="n">afsnt_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt</span><span class="p">[(</span><span class="n">afsnt</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"N"</span><span class="p">),</span><span class="w"> </span><span class="p">]</span><span class="w">
+
+</span><span class="c1"># 존재하는 지연 데이터 개수에 맞는 미지연 데이터(32150행) 추출 후 바인딩</span><span class="w">
+</span><span class="n">trainSet_N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sample_n</span><span class="p">(</span><span class="n">afsnt_N</span><span class="p">,</span><span class="w"> </span><span class="m">321560</span><span class="p">)</span><span class="w">
+</span><span class="n">trainSet</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rbind</span><span class="p">(</span><span class="n">afsnt_Y</span><span class="p">,</span><span class="w"> </span><span class="n">trainSet_N</span><span class="p">)</span><span class="w">
+</span><span class="n">afsnt_dly</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">afsnt_dly</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="n">colnames</span><span class="p">(</span><span class="n">trainSet</span><span class="p">))]</span><span class="w">
+
+</span><span class="c1"># 랜덤 포레스트 분류모형을 적합합니다. (그리드 서칭 결과 최적의 ntree, mtry 결정)</span><span class="w">
+</span><span class="c1"># 다른 범주가 존재하는 'FLO' 변수 제거</span><span class="w">
+</span><span class="n">fitRFC</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">randomForest</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trainSet</span><span class="p">[,</span><span class="w"> </span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">)],</span><span class="w"> 
+                       </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trainSet</span><span class="p">[,</span><span class="w"> </span><span class="m">8</span><span class="p">],</span><span class="w"> 
+                       </span><span class="n">xtest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">afsnt_dly</span><span class="p">[,</span><span class="w"> </span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">)],</span><span class="w"> 
+                       </span><span class="n">ntree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">mtry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">importance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">do.trace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> 
+                       </span><span class="n">keep.forest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## ntree      OOB      1      2
+##    50:  21.91% 11.63% 49.70%
+##   100:  21.08% 10.66% 49.24%
+##   150:  20.79% 10.34% 49.05%
+##   200:  20.66% 10.17% 49.02%
+##   250:  20.58% 10.07% 49.00%
+##   300:  20.53% 10.03% 48.91%
+##   350:  20.47%  9.97% 48.85%
+##   400:  20.42%  9.92% 48.80%
+##   450:  20.42%  9.91% 48.85%
+##   500:  20.40%  9.89% 48.82%
+</code></pre></div></div>
+
+<h4 id="15-최종-예측-결과dly-dly_rate-확인-후-데이터-프레임-결합">15. 최종 예측 결과(DLY, DLY_RATE) 확인 후 데이터 프레임 결합</h4>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">trProb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fitRFC</span><span class="o">$</span><span class="n">test</span><span class="o">$</span><span class="n">votes</span><span class="p">[,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span><span class="w">
+</span><span class="n">trPred</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fitRFC</span><span class="o">$</span><span class="n">test</span><span class="o">$</span><span class="n">predicted</span><span class="w">
+
+</span><span class="n">final</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cbind</span><span class="p">(</span><span class="n">trPred</span><span class="p">,</span><span class="w"> </span><span class="n">trProb</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">as.data.frame</span><span class="p">()</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">final</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"DLY"</span><span class="p">,</span><span class="w"> </span><span class="s2">"DLY_RATE"</span><span class="p">)</span><span class="w">
+</span><span class="n">final</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.factor</span><span class="p">(</span><span class="n">final</span><span class="o">$</span><span class="n">DLY</span><span class="p">)</span><span class="w">
+</span><span class="n">final</span><span class="o">$</span><span class="n">DLY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">revalue</span><span class="p">(</span><span class="n">final</span><span class="o">$</span><span class="n">DLY</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s2">"1"</span><span class="o">=</span><span class="s2">"N"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2"</span><span class="o">=</span><span class="s2">"Y"</span><span class="p">))</span><span class="w">
+
+</span><span class="c1"># 기존 afsnt_dly에 예측한 DLY, DLY_RATE 컬럼 추가</span><span class="w">
+</span><span class="n">afsnt_dly_final</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cbind</span><span class="p">(</span><span class="n">afsnt_dly</span><span class="p">,</span><span class="w"> </span><span class="n">final</span><span class="p">)</span><span class="w">
+
+</span><span class="n">head</span><span class="p">(</span><span class="n">afsnt_dly_final</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##   SDT_YY SDT_MM SDT_DD SDT_DY  ARP FLO AOD DLY HOUR count FLT_C02_ratio
+## 1   2019      9     16     월 ARP1   L   A  NA    9    25      5.091312
+## 2   2019      9     16     월 ARP3   L   D  NA    7    24      5.091312
+## 3   2019      9     16     월 ARP1   L   A  NA   14    26     22.232472
+## 4   2019      9     16     월 ARP3   L   D  NA   13    30     22.232472
+## 5   2019      9     16     월 ARP4   L   A  NA   20     3     22.436604
+## 6   2019      9     16     월 ARP3   L   D  NA   19    28     22.436604
+##   FLT_IRR_ratio FLT_meantimediff FLT_DLY_ratio DLY DLY_RATE
+## 1     1.8262313         12.28832      5.755396   N    0.062
+## 2     1.8262313         12.28832      5.755396   N    0.272
+## 3     0.1845018         20.32472     22.785978   N    0.346
+## 4     0.1845018         20.32472     22.785978   Y    0.842
+## 5     0.2205072         21.50331     20.507166   N    0.346
+## 6     0.2205072         21.50331     20.507166   Y    0.560
+</code></pre></div></div>
+
+<h3 id="the-end">The End</h3>
+
+
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<div class="footer__copyright">
+		<span>© 2019 Jonathan Lim</span>
+		<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/journal-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>
