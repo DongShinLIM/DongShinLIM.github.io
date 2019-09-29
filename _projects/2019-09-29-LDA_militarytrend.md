@@ -4,7 +4,7 @@ date: 2019-09-28 00:00:00
 featured_image: '/images/demo/mili.jpg'
 excerpt: This page is a demo that shows everything you can do inside portfolio and blog posts. We've included everything you need to create engaging posts about your work, and show off your case studies in a beauti
 ---
-![](/images/demo/mili.jpg)
+![](/images/demo/topic.png)
 
 
 ### LDA기법을 활용한 국내 최근 군사보안 관련 연구 경향 분석
