@@ -1,0 +1,641 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<head>
+
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+	Jonathan Lim
+
+	Journal Theme by https://jekyllthemes.io
+	Premium + free Jekyll themes for your blog or website.
+
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<!-- Page Info -->
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<title>Deep Learning – Jonathan Lim</title>
+	<meta name="description" content="1-3 Data representations for neural networks">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Deep Learning – Jonathan Lim">
+	<meta name="twitter:description" content="1-3 Data representations for neural networks">
+	<meta name="twitter:image:src" content="http://localhost:4000/images/demo/dl.jpg">
+
+	<!-- Facebook OpenGraph -->
+	<meta property="og:title" content="Deep Learning – Jonathan Lim" />
+	<meta property="og:description" content="1-3 Data representations for neural networks" />
+	<meta property="og:image" content="http://localhost:4000/images/demo/dl.jpg" />
+
+	
+	<!-- Font Embed Code -->
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Muli:400,400i,600" rel="stylesheet">
+	
+
+	<!-- Styles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<!-- Icons -->
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/solid.js" integrity="sha384-GXi56ipjsBwAe6v5X4xSrVNXGOmpdJYZEEh/0/GqJ3JTHsfDsF8v0YQvZCJYAiGu" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/brands.js" integrity="sha384-0inRy4HkP0hJ038ZyfQ4vLl+F4POKbqnaUB6ewmU4dWP0ki8Q27A0VFiVRIpscvL" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.1.1/js/fontawesome.js" integrity="sha384-NY6PHjYLP2f+gL3uaVfqUZImmw71ArL9+Roi9o+I4+RBqArA2CfW1sJ1wkABFfPe" crossorigin="anonymous"></script>
+
+	
+	<!-- Custom Styles -->
+	<style></style>
+	
+
+	
+	<!-- Analytics Code -->
+	
+	
+
+	
+	<!-- Extra Header JS Code -->
+	
+	
+	
+</head>
+
+
+<body class="loading ajax-loading" data-site-url="http://localhost:4000" data-page-url="/blog/dl3">
+
+
+	<header class="header">
+
+	<div class="header-image header-image--on" style="background-image: url(/images/demo/dl.jpg);"></div>
+	<div class="header-image"></div>
+
+	<div class="header-overlay"></div>
+
+	<div class="header__content">
+
+		
+		<a href="/" class="header__title">
+			Jonathan Lim
+		</a>
+		
+
+		<p class="header__tagline">Talent is the desire to practice and that it's attitude that counts</p>
+
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					
+					<li class="menu__list__item">
+						<a href="/about" class="menu__list__item__link">About</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/" class="menu__list__item__link">Latest</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/projects/" class="menu__list__item__link">Projects</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/iotas/" class="menu__list__item__link">IOTA</a>
+					</li>
+					
+					<li class="menu__list__item">
+						<a href="/contact" class="menu__list__item__link">Contact</a>
+					</li>
+					
+				</ul>
+				<ul class="socials">
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://twitter.com/__JonathanLim__" target="_blank" class="socials__item__link" title="Twitter">
+			<i class="fab fa-twitter" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://instagram.com/d_shin91" target="_blank" class="socials__item__link" title="Instagram">
+			<i class="fab fa-instagram" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<li class="socials__item">
+		<a href="https://github.com/DongShinLIM" target="_blank" class="socials__item__link" title="Github">
+			<i class="fab fa-github" aria-hidden="true"></i>
+		</a>
+	</li>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</ul>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+
+
+	<div class="loader"><svg width="120" height="30" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="60" cy="15" r="9" fill-opacity="0.3"><animate attributeName="r" from="9" to="9" begin="0s" dur="0.8s" values="9;15;9" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="0.5" to="0.5" begin="0s" dur="0.8s" values=".5;1;.5" calcMode="linear" repeatCount="indefinite" /></circle><circle cx="105" cy="15" r="15"><animate attributeName="r" from="15" to="15" begin="0s" dur="0.8s" values="15;9;15" calcMode="linear" repeatCount="indefinite" /><animate attributeName="fill-opacity" from="1" to="1" begin="0s" dur="0.8s" values="1;.5;1" calcMode="linear" repeatCount="indefinite" /></circle></svg></div>
+
+	<div class="page-loader"></div>
+
+	
+	<div class="page">
+
+		<div class="page__content" data-page-title="Deep Learning – Jonathan Lim" data-image="/images/demo/dl.jpg">
+
+			<section class="intro">
+
+	<div class="wrap">
+
+		<h1>Deep Learning</h1>
+		<p>08 October 2019</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	<div class="wrap">
+
+		<h3 id="23-신경망의-톱니바퀴--텐서-연산">2.3. 신경망의 톱니바퀴 : 텐서 연산</h3>
+
+<ul>
+  <li>심층 신경망이 학습한 모든 변환을 수치 데이터 텐서에 적용하는 몇 종류의 텐서 연산 <strong>tensor operation</strong>으로 나타낼 수 있습니다.</li>
+  <li>예를 들어, 텐서 덧셈이나 텐서 곱셈입니다.</li>
+</ul>
+
+<p>앞 게시물에서 Dense 층을 쌓아서 신경망을 만들었습니다. 케라스의 층은 다음과 같이 생성합니다.</p>
+
+<p>keras.layers.Dense(512, activation=’relu’)</p>
+
+<ul>
+  <li>
+    <p>이 층은 2D 텐서를 입력 받고 입력 텐서의 새로운 표현인 또 다른 2D 텐서를 반환하는 함수로 해석할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>구체적으로, 이 함수는 다음과 같습니다. (W는 2D 텐서이고  b는 벡터 입니다. 둘 모두 층의 속성입니다.)</p>
+  </li>
+</ul>
+
+<p>output = relu(dot(W, input) + b)</p>
+
+<p>좀 더 자세히 알아보면 다음과 같습니다.</p>
+
+<p><strong>여기에 3개의 텐서 연산이 있습니다.:</strong></p>
+<ul>
+  <li>입력 텐서와 텐서 W사이의 점곱(dot);</li>
+  <li>점곱의 결과인 2D 텐서와 벡터 b 사이의 덧셈(+);</li>
+  <li>마지막으로 relu 연산입니다. relu(x)는 max(x,0)입니다.</li>
+</ul>
+
+<h3 id="231-원소별-원산모든-entry에-적용">2.3.1. 원소별 원산(모든 entry에 적용)</h3>
+
+<ul>
+  <li>relu 함수와 덧셈은 원소별 연산입니다:</li>
+  <li>이 연산은 텐서에 있는 각 원소에 독립적으로 적용됩니다.</li>
+  <li>
+    <p>이 말은 고도의 병렬구현이 가능한 연산이라는 의미입니다.</p>
+  </li>
+  <li>만약 파이썬으로 원소별 연산을 구현한다면 다음 relu 연산 구현처럼 for 반복문을 사용 할 것입니다:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_relu</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>                     <span class="c1">#  x는 2D 넘파이 배열입니다.
+</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>                                 <span class="c1">#  입력 텐서 자체를 바꾸지 않도록 복사합니다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>덧셈도 동일합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span>                <span class="c1"># x는 2D 넘파이 배열입니다.
+</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>같은 원리로 원소별 곱셈, 뺄셈 등을 할 수 있습니다.</p>
+
+<ul>
+  <li>
+    <p>사실 넘파이 배열을 다룰 때는 최적화된 넘파이 내장 함수로 이런 연산들을 처리할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>따라서 넘파이는 다음과 같은 원소별 연산을 엄청난 속도로 처리합니다:</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>                       <span class="c1"># Element-wise Addition
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>           <span class="c1"># Element-wise relu
+</span></code></pre></div></div>
+
+<h3 id="232-브로드캐스팅">2.3.2. 브로드캐스팅</h3>
+
+<ul>
+  <li>앞서 살펴본 단순한 덧셈 구현인 naive_add는 동일한 크기의 2D 텐서만 지원합니다.</li>
+  <li>하지만 이전에 보았던 Dense 층에서는 2D 텐서와 벡터를 더했습니다.</li>
+</ul>
+
+<h4 id="크기가-다른-두-텐서를-더하면-어떤-일이-일어날까요">크기가 다른 두 텐서를 더하면 어떤 일이 일어날까요?</h4>
+
+<p>실행 가능하다면, 작은 텐서가 큰 텐서의 크기에 맞추어 브로드캐스팅 됩니다. 이는 두 단계로 이루어집니다.</p>
+
+<ol>
+  <li>큰 텐서의 ndim에 맞도록 작은 텐서에 (브로드캐스팅 축이라고 부르는) 축이 추가 됩니다.</li>
+  <li>작은 텐서가 새 축을 따라서 큰 텐서의 크기에 맞도록 반복됩니다.</li>
+</ol>
+
+<h4 id="구체적인-예를-살펴보겠습니다">구체적인 예를 살펴보겠습니다.</h4>
+
+<ul>
+  <li>X의 크기는 (32,10)이고 y의 크기는 (10, )이라고 가정합니다.</li>
+  <li>먼저 y에 비어 있는 첫 번째 축을 추가하여 크기를 (1,10)으로 만듭니다.</li>
+  <li>그 다음 y를 이 축에 32번 반복하면 텐서 Y의 크기는 (32,10)이 됩니다. 여기에서 Y[i, :] == y for i in range(0,32)입니다.</li>
+  <li>
+    <p>이제 X와 Y의 크기가 같으므로 더할 수 있습니다.</p>
+  </li>
+  <li>구현 입장에서 보면 새로운 텐서가 만들어지면 매우 비효율 적이므로 어떤 2D 텐서도 만들어지지 않습니다.</li>
+  <li>반복된 연산은 매우 가상적이며, 이 과정은 메모리 수준이 아니라 알고리즘 수준에서 일어납니다.</li>
+  <li>하지만 새로운 축을 따라 벡터가 32번 반복된다고 생각하는 것이 이해하기 쉽습니다.</li>
+</ul>
+
+<h3 id="다음은-단순하게-구현한-예-입니다">다음은 단순하게 구현한 예 입니다.</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_add_matrix_and_vector</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>                           <span class="c1">#  x는 넘파이 배열입니다.
+</span>    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>                           <span class="c1">#  y는 넘파이 배열입니다.
+</span>    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>                                       <span class="c1">#  입력 텐서를 바꾸지 않도록 복사합니다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>(a, b, … n, n + 1, … m)크기의 텐서와 (n, n + 1, … m)크기의 텐서 사이에 브로드캐스팅으로 원소별 연산을 적용할 수 있습니다.</p>
+  </li>
+  <li>
+    <p>이 때 브로드캐스팅은 a부터 n-1까지의 축에 자동으로 일어납니다.</p>
+  </li>
+</ul>
+
+<h4 id="다음은-크기가-다른-두-텐서에-브로드캐스팅으로-원소별-maximum-연산을-적용하는-예입니다">다음은 크기가 다른 두 텐서에 브로드캐스팅으로 원소별 maximum 연산을 적용하는 예입니다.</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>        <span class="c1"># x는 (64, 3, 32, 10)크기의 랜덤 텐서입니다.
+</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">32</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>              <span class="c1">#  y는 (32, 10)크기의 랜덤 텐서입니다.
+</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>                        <span class="c1"># 출력 z크기는 x와 동일하게 (64, 3, 32, 10) 입니다.
+</span></code></pre></div></div>
+
+<h3 id="233-텐서-점곱">2.3.3. 텐서 점곱</h3>
+
+<ul>
+  <li>텐서 곱셈이라고 부르는 (원소별 곱셈과 혼동하지 마세요) 점곱 연산은 가장 널리 사용되고 유용한 텐서 연산입니다.</li>
+  <li>
+    <p>원소별 연산과 반대로 입력 텐서의 원소들을 결합시킵니다.</p>
+  </li>
+  <li>넘파이, 케라스, 씨아노, 텐서플로에서 원소별 곱셈은 * 연산자를 사용합니다.</li>
+  <li>텐서플로에서는 dot 연산자가 다르지만 넘파이와 케라스는 점곱 연산에 보편적인 dot 연산자를 사용합니다.</li>
+</ul>
+
+<p>import numpy as np
+z = np.dot(x, y)</p>
+
+<p>from keras import backend as K
+z = K.dot(x, y)</p>
+
+<p>z = x . y</p>
+
+<p>점곱 연산은 수학에서 어떤 일을 할까요? 2개의 벡터 x와 y의 점곱은 다음과 같이 계산을 합니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_vector_dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">z</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">z</span>
+     
+    <span class="c1"># x와 y는 넘파이 벡터입니다.
+</span></code></pre></div></div>
+
+<ul>
+  <li>여기서 볼 수 있듯이 두 벡터의 점곱은 스칼라가 되므로 원소 개수가 같은 벡터끼리 점곱이 가능합니다.</li>
+</ul>
+
+<p>행렬 x와 벡터 y사이에서도 점곱이 가능합니다. y와 x의 행 사이에서 점곱이 일어나므로 벡터가 반환됩니다.</p>
+
+<p>다음과 같이 구현할 수 있습니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">naive_matrix_vector_dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">z</span>
+</code></pre></div></div>
+
+<p>행렬-벡터 점곱과 벡터-벡터 점곱 사이의 관계를 부각하기 위해 앞에서 만든 함수를 재사용해 보겠습니다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_matrix_vector_dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">naive_vector_dot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="n">y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+</code></pre></div></div>
+
+<p>두 텐서 중 하나라도 ndim이 1보다 크면 dot 연산에 교환 법칙이 성립되지 않습니다.</p>
+
+<p>다시말하면 dot(x,y)와 dot(y,x)가 같지 않습니다.</p>
+
+<ul>
+  <li>물론 점곱은 임의의 축 개수를 가진 텐서에 일반화됩니다. 가장 일반적인 용도는 두 행렬 간의 점곱일 것입니다.</li>
+  <li>x.shape[1] == y.shape[0] 일 때 두 행렬 x와 y의 점곱(dot(x,y))이 성립됩니다.</li>
+  <li>x의 열과 y의 행 사이 벡터의 점곱으로 인해 (x.shape[0], y.shape[1]) 크기의 행렬이 됩니다. 
+다음은 단순한 구현 예 입니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">naive_matrix_dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>  <span class="c1"># 이 연산은 0이 채워진 특정 크기의 벡터를 만듭니다.
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>             <span class="c1"># x의 행을 반복합니다.
+</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>         <span class="c1"># y의 열을 반복합니다.
+</span>            <span class="n">row_x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+            <span class="n">column_y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">naive_vector_dot</span><span class="p">(</span><span class="n">row_x</span><span class="p">,</span> <span class="n">column_y</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+</code></pre></div></div>
+
+<p>다음 그림과 같이 입력과 출력을 배치해 보면 어떤 크기의 점곱이 가능한지 이해하는데 도움이 됩니다.</p>
+
+<p><img src="/images/demo/Fig2-5.PNG" alt="" /></p>
+
+<ul>
+  <li>x, y, z는 직사각형 모양으로 그려져 있습니다.(원소들이 채워진 박스라고 생각하면 됩니다)</li>
+  <li>x의 행 벡터와 y의 열 벡터가 같은 크기여야 하므로 자동으로 x의 너비는 y의 높이와 동일해야 합니다.</li>
+</ul>
+
+<p>더 일반적으로 앞서 설명한 2D의 경우처럼 크기를 맞추는 동일한 규칙을 따르면 다음과 같이 고차원 텐서 간의 점곱을 할 수 있습니다.</p>
+
+<p>(a, b, c, d) . (d,) -&gt; (a, b, c)</p>
+
+<p>(a, b, c, d) . (d, e) -&gt; (a, b, c, e)</p>
+
+<h3 id="234-텐서-크기-변환">2.3.4. 텐서 크기 변환</h3>
+
+<ul>
+  <li>반드시 알아 두어야 할 세 번째 텐서 연산은 <strong>텐서 크기 변환</strong> 입니다.</li>
+  <li>첫 번째 신경망 예제의 Dense 층에서는 사용되지 않지만 신경망에 주입할 숫자 데이터를 전처리 할 때 사용했습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="kn">import</span> <span class="n">mnist</span>
+<span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_images</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(60000, 28, 28)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_images</span> <span class="o">=</span> <span class="n">train_images</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">60000</span><span class="p">,</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">28</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_images</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(60000, 784)
+</code></pre></div></div>
+
+<ul>
+  <li>텐서의 크기를 변환 한다는 것은 특정 크기에 맞게 열과 행을 재배열 한다는 것입니다.</li>
+  <li>당연히 크기가 변환된 텐서는 원래 텐서와 원소 개수가 동일 합니다.</li>
+</ul>
+
+<p>간단한 예제를 통해 크기 변환을 알아보겠습니다:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+              <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(3, 2)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">x</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0.],
+       [1.],
+       [2.],
+       [3.],
+       [4.],
+       [5.]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(6, 1)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[0., 1., 2.],
+       [3., 4., 5.]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="o">.</span><span class="n">shape</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2, 3)
+</code></pre></div></div>
+
+<ul>
+  <li>자주 사용하는 특별한 크기 변환은 <strong>전치</strong>입니다.</li>
+  <li>행렬의 전치는 행과 열을 바꾸는 것을 의미합니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(20, 300)
+</code></pre></div></div>
+
+<h3 id="235-텐서-연산의-기하학적-해석">2.3.5. 텐서 연산의 기하학적 해석</h3>
+
+<ul>
+  <li>텐서 연산이 조작하는 텐서의 내용은 어떤 기하학적 공간에 있는 좌표 포인트로 해석될 수 있기 때문에 모든 텐서 연산은 기하학적 해석이 가능합니다.</li>
+  <li>예를 들어 덧셈을 생각해보면서 다음 벡터를 보겠습니다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>이 포인트는 2D 공간에 있습니다(see figure 2.6). 일반적으로 그림 2-7과 같이 원점에서 포인트를 연결하는 화살표로 벡터를 나타냅니다.</p>
+
+<p><img src="/images/demo/Fig2-6.PNG" alt="" />
+<img src="/images/demo/Fig2-7.PNG" alt="" /></p>
+
+<ul>
+  <li>새로운 포인트, B = [1, 0.25]를 이전 벡터에 더해 보겠습니다.</li>
+  <li>기하학적으로는 벡터 화살표를 연결하여 계산할 수 있습니다. 최종 위치는 두 벡터의 덧셈을 나타내는 벡터가 됩니다. (그림 2-8 참조)</li>
+</ul>
+
+<p><img src="/images/demo/Fig2-8.PNG" alt="" /></p>
+
+<h3 id="236-딥러닝의-기하학적-해석">2.3.6. 딥러닝의 기하학적 해석</h3>
+
+<ul>
+  <li><strong>신경망은 전체적으로 텐서 연산의 연결로 구성된 것이고, 모든 텐서 연산은 입력 데이터의 기하학적 변환</strong> 임을 배웠습니다.</li>
+  <li>단순한 단계들이 길게 이어져 구현된 신경망을 고차원 공간에서 매우 복잡한 기하학적 변환을 하는 것으로 해석할 수 있습니다.</li>
+</ul>
+
+<p>3D라면 다음 비유가 이해하는데 도움이 될 것입니다:</p>
+
+<ul>
+  <li>하나의 빨간 종이와 파란종이 두 장을 겹친 후 뭉쳐서 공을 만듭니다.</li>
+  <li>이 종이 공이 입력 데이터이고 색종이는 분류 문제의 데이터 클래스입니다.</li>
+  <li>신경망이 해야할 일은 종이 공을 펼쳐서 두 클래스가 다시 깔끔하게 분리 되는 변환을 찾는 것 입니다.</li>
+  <li>손가락으로 종이 공을 조금씩 펼치는 것처럼 딥러닝을 사용하여 3D공간에서 간단한 변환들을 연결해 이를 구현합니다.</li>
+</ul>
+
+<p>Figure 2.9. 복합한 데이터의 매니폴드 펼치기
+<img src="/images/demo/Fig2-9.PNG" alt="" /></p>
+
+<ul>
+  <li>종이공을 펼치는 것이 머신러닝이 하는 일 입니다.</li>
+  <li>기초적인 연산을 길게 연결하여 복잡한 기하학적 변환을 조금씩 분해하는 방식이 마치 사람이 종이공을 펼치기 위한 전략과 매우 흡사합니다.</li>
+  <li>심층 네트워크의 각 층은 데이터를 조금씩 풀어 주는 변환을 적용하므로, 이런 층을 깊게 쌓으면 아주 복잡한 분해 과정을 처리할 수 있습니다.</li>
+</ul>
+
+
+	</div>
+
+</section>
+
+		</div>
+
+	</div>
+
+
+	<footer class="footer">
+
+	<div class="footer__copyright">
+		<span>© 2019 Jonathan Lim</span>
+		<a href="https://jekyllthemes.io" target="_blank">Jekyll Themes</a>
+	</div>
+
+</footer>
+
+
+	<!-- Javascript Assets -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/js/journal-min.js"></script>
+
+	
+	<!-- Extra Footer JS Code -->
+	
+	
+
+
+</body>
+
+</html>
